@@ -22,18 +22,17 @@ class KaoshiController extends Controller
         }
         echo '加密:'.$pass;  echo '</br>';
         echo '</br>';
-        $jimi=$this->jcaesar($pass);
-           echo $jimi;
     }
-    public function  jcaesar($pass){
+    public function  jcaesar(){
 
-            $length=strlen($pass);
+        $char=$_GET['str'];
+        $length=strlen($char);
 
             $str="";
             for ($i=0;$i<$length;$i++)
             {
 
-                $ord=ord($pass[$i])-4;
+                $ord=ord($char[$i])-4;
                 $chr=chr($ord);
                 echo $ord.'>>>'.$chr;echo'</br>';
                 $str .=$chr;
